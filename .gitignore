@@ -1,0 +1,5 @@
+manage.py
+myvenv/
+.vscode/
+db.sqlite3
+*/__pycache__/
