@@ -5,7 +5,8 @@ from .models import Post
 # pylint: disable = E1101 
 # Create your views here.
 def post_list(request):
-    post_list = Post.objects.filter(published_date__lte=timezone.now()).order_by('-created_date')
+    post_list = Post.objects.filter(published_date__lte=timezone.now())
+    post_list.order_by('-created_date')
     return render(request, 'blog/post_list.html', {'post_list': post_list})
 
 def post_detail(request, post_id):
