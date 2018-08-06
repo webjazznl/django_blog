@@ -6,17 +6,11 @@
 <div>
 <h1><a href="/">Django Girls Blog</a></h1>
 </div>
+{%for post in post_list%}
 <div>
-<p>published: 14.06.2014, 12:14</p>
-<h2><a href="">My first post</a></h2>
-<p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi po
-rta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum mass
-a justo sit amet risus.</p>
+<p>published: {{post.published_date}}</p>
+<h2><a href="{% url 'blog:post_detail' post.id %}">{{post.title}}</a></h2>
+{{post.text}}
 </div>
-<div>
-<p>published: 14.06.2014, 12:14</p>
-<h2><a href="">My second post</a></h2>
-<p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi po
-rta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut f.</p>
-</div>
+{%endfor%}
 </body>
